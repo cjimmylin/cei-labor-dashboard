@@ -1,7 +1,7 @@
-// Generated 2026-04-10T14:05:17.907275 by generate_data.py
+// Generated 2026-04-10T14:10:19.342029 by generate_data.py
 const LABOR = {
   "meta": {
-    "generated": "2026-04-10T14:05:17.907193",
+    "generated": "2026-04-10T14:10:19.341777",
     "totalStatements": 3044,
     "totalPapers": 2368,
     "laborStatements": 1781,
@@ -11,13 +11,21 @@ const LABOR = {
   },
   "summary": {
     "totalItems": 2359,
+    "totalDocuments": 2359,
     "statementsCount": 1781,
+    "totalStatements": 1781,
     "papersCount": 578,
+    "totalPapers": 578,
     "regionsRepresented": 12,
+    "totalRegions": 12,
+    "totalCountries": 183,
+    "totalThemes": 15,
     "yearRange": [
       1999,
       2026
     ],
+    "dateRange": "1999\u20132026",
+    "dateRangeDetail": "1999 to 2026",
     "topThemes": {
       "labels": [
         "Creative, Knowledge & Content Labor",
