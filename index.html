@@ -85,16 +85,20 @@
             <h2 class="section-title">Key Findings</h2>
             <div class="findings-grid" id="findings-grid"></div>
 
+            <div id="annotations-summary-findings" class="annotations-container"></div>
+
             <div class="chart-grid-2">
                 <div class="chart-card">
                     <h3>Top Themes</h3>
                     <div class="chart-container" id="chart-themes-bar"></div>
+                    <div id="annotations-summary-themes" class="annotations-container"></div>
                 </div>
                 <div class="chart-card">
                     <h3>Source Breakdown</h3>
                     <div class="chart-container" id="chart-source-pie"></div>
                 </div>
             </div>
+            <div id="annotations-summary-acceleration" class="annotations-container"></div>
         </section>
 
         <!-- Tab 2: Region x Theme Heatmap -->
@@ -121,6 +125,7 @@
                 <h3 id="heatmap-title">Region &times; Theme Heatmap</h3>
                 <div class="chart-container chart-heatmap" id="chart-heatmap"></div>
             </div>
+            <div id="annotations-heatmap-main" class="annotations-container"></div>
 
             <div class="chart-grid-2">
                 <div class="chart-card">
@@ -132,6 +137,7 @@
                     <div class="chart-container chart-sm" id="chart-col-marginal"></div>
                 </div>
             </div>
+            <div id="annotations-heatmap-gaps" class="annotations-container"></div>
         </section>
 
         <!-- Tab 3: Geographic Distribution -->
@@ -158,6 +164,8 @@
                 <h3>Source Language Distribution</h3>
                 <div class="chart-container chart-sm" id="chart-language"></div>
             </div>
+            <div id="annotations-geographic-concentration" class="annotations-container"></div>
+            <div id="annotations-geographic-language" class="annotations-container"></div>
         </section>
 
         <!-- Tab 4: Temporal Trends -->
@@ -179,6 +187,8 @@
                     <div class="chart-container" id="chart-cumulative"></div>
                 </div>
             </div>
+            <div id="annotations-temporal-emergence" class="annotations-container"></div>
+            <div id="annotations-temporal-cumulative" class="annotations-container"></div>
         </section>
 
         <!-- Tab 5: Voice Gap Analysis -->
@@ -197,22 +207,34 @@
                 </div>
             </div>
 
-            <div class="chart-card">
-                <h3>CST Citation Tracker</h3>
-                <div class="chart-container chart-sm" id="chart-cst"></div>
+            <div id="annotations-voicegap-orgtypes" class="annotations-container"></div>
+
+            <div class="chart-grid-2">
+                <div class="chart-card">
+                    <h3>CST Citation Tracker</h3>
+                    <div class="chart-container" id="chart-cst"></div>
+                </div>
+                <div class="chart-card">
+                    <h3>CST Engagement by Region</h3>
+                    <div class="chart-container" id="chart-cst-region"></div>
+                </div>
             </div>
+            <div id="annotations-voicegap-cst" class="annotations-container"></div>
 
             <div class="chart-card">
                 <h3>Authored vs Affected by Region</h3>
                 <div class="chart-container chart-tall" id="chart-voice-gap"></div>
             </div>
+            <div id="annotations-voicegap-authored" class="annotations-container"></div>
         </section>
 
     </main>
 
     <!-- Provenance Footer -->
-    <footer style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.75rem; border-top:1px solid var(--border);">
-        CEI Literature Vault &mdash; AI &amp; Labor Dashboard &mdash; Data loaded from <code>data.js</code>
+    <footer style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.75rem; border-top:1px solid var(--border); line-height:1.8;">
+        CEI Literature Vault &mdash; AI &amp; Labor Dashboard v5<br>
+        Data: Tapestry (3,053 statements) + CEI-Lit-WS (2,368 papers) &mdash; keyword classification with 16 labor themes<br>
+        Generated <span id="footer-timestamp"></span> &mdash; Centre for Ethics and Integrity
     </footer>
 
     <!-- ECharts 5.5.0 -->
@@ -436,6 +458,21 @@
                 axisLine: { lineStyle: { color: tc.border } },
                 splitLine: { lineStyle: { color: tc.splitLine } },
                 nameTextStyle: { color: tc.textMuted, fontSize: 11 }
+            };
+        }
+
+        function baseToolbox(tc) {
+            return {
+                show: true,
+                right: 10,
+                top: 0,
+                iconStyle: { borderColor: tc.textMuted },
+                emphasis: { iconStyle: { borderColor: tc.accent } },
+                feature: {
+                    saveAsImage: { title: 'Save PNG', pixelRatio: 2 },
+                    dataView: { title: 'Data', readOnly: true, lang: ['Data View', 'Close', ''] },
+                    restore: { title: 'Reset' }
+                }
             };
         }
 
@@ -1090,6 +1127,52 @@
             }, true);
         }
 
+        /* --- Tab 5: CST Engagement by Region --- */
+        function renderCSTByRegion() {
+            var tc = getThemeColors();
+            var vg = LABOR.voiceGap || {};
+            var cbr = vg.cstByRegion || {};
+            var regions = cbr.regions || [];
+            var rates = cbr.rates || [];
+            var counts = cbr.counts || [];
+
+            var chart = getOrCreateChart('chart-cst-region');
+            if (!chart) return;
+
+            chart.setOption({
+                backgroundColor: 'transparent',
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow' },
+                    formatter: function (params) {
+                        var p = params[0];
+                        var idx = p.dataIndex;
+                        return p.name + '<br>CST engagement: ' + rates[idx] + '% (' + counts[idx] + ' items)';
+                    }
+                },
+                grid: { left: '35%', right: '10%', top: '4%', bottom: '8%' },
+                xAxis: Object.assign({ type: 'value', name: '% citing CST', max: 10 }, baseAxisStyle(tc)),
+                yAxis: Object.assign({ type: 'category', data: regions.slice().reverse() }, baseAxisStyle(tc)),
+                series: [{
+                    type: 'bar',
+                    data: rates.slice().reverse(),
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                            { offset: 0, color: '#d97706' },
+                            { offset: 1, color: '#f59e0b' }
+                        ]),
+                        borderRadius: [0, 3, 3, 0]
+                    },
+                    barMaxWidth: 18,
+                    label: {
+                        show: true, position: 'right',
+                        color: tc.textSecondary, fontSize: 10,
+                        formatter: function (p) { return p.value > 0 ? p.value + '%' : ''; }
+                    }
+                }]
+            }, true);
+        }
+
         /* --- Tab 5: Voice Gap (Grouped Horizontal Bar) --- */
         function renderVoiceGap() {
             var tc = getThemeColors();
@@ -1158,6 +1241,78 @@
         });
 
         /* ====================================================================
+           8b. ANNOTATION SYSTEM
+           ==================================================================== */
+        var PERSPECTIVE_COLORS = {
+            'Labor Policy': '#6366f1',
+            'CST Perspective': '#d97706',
+            'Regional Studies': '#10b981',
+            'Computational Linguistics': '#8b5cf6',
+            'Data Visualization': '#06b6d4',
+            'Academic Writing': '#ec4899'
+        };
+
+        function renderAnnotations(containerKey) {
+            var container = document.getElementById('annotations-' + containerKey.replace(/\./g, '-'));
+            if (!container) return;
+            var ann = (LABOR.annotations || {})[containerKey];
+            if (!ann || !ann.length) return;
+
+            while (container.firstChild) container.removeChild(container.firstChild);
+            ann.forEach(function (a) {
+                var card = document.createElement('div');
+                card.className = 'annotation-card';
+                var borderColor = PERSPECTIVE_COLORS[a.perspective] || '#6366f1';
+                card.style.borderLeftColor = borderColor;
+
+                var label = document.createElement('span');
+                label.className = 'annotation-perspective';
+                label.style.color = borderColor;
+                label.textContent = a.perspective;
+
+                var text = document.createElement('p');
+                text.className = 'annotation-text';
+                text.textContent = a.text;
+
+                card.appendChild(label);
+                card.appendChild(text);
+
+                if (a.detail) {
+                    var toggle = document.createElement('button');
+                    toggle.className = 'annotation-toggle';
+                    toggle.textContent = 'Read more';
+                    toggle.setAttribute('aria-expanded', 'false');
+                    var detail = document.createElement('p');
+                    detail.className = 'annotation-detail';
+                    detail.textContent = a.detail;
+                    detail.style.display = 'none';
+                    toggle.addEventListener('click', function () {
+                        var expanded = detail.style.display !== 'none';
+                        detail.style.display = expanded ? 'none' : 'block';
+                        toggle.textContent = expanded ? 'Read more' : 'Show less';
+                        toggle.setAttribute('aria-expanded', String(!expanded));
+                    });
+                    card.appendChild(toggle);
+                    card.appendChild(detail);
+                }
+
+                container.appendChild(card);
+            });
+        }
+
+        function renderAllAnnotations(tabId) {
+            var keyMap = {
+                summary: ['summary.findings', 'summary.themes', 'summary.acceleration'],
+                heatmap: ['heatmap.main', 'heatmap.gaps'],
+                geographic: ['geographic.concentration', 'geographic.language'],
+                temporal: ['temporal.emergence', 'temporal.cumulative'],
+                voicegap: ['voicegap.orgtypes', 'voicegap.cst', 'voicegap.authored']
+            };
+            var keys = keyMap[tabId] || [];
+            keys.forEach(renderAnnotations);
+        }
+
+        /* ====================================================================
            9. RENDER ORCHESTRATION
            ==================================================================== */
         var tabRenderers = {
@@ -1165,28 +1320,34 @@
                 renderFindings();
                 renderThemesBar();
                 renderSourcePie();
+                renderAllAnnotations('summary');
             },
             heatmap: function () {
                 renderHeatmap();
                 renderRowMarginal();
                 renderColMarginal();
+                renderAllAnnotations('heatmap');
             },
             geographic: function () {
                 renderCountryTreemap();
                 renderRegionTotals();
                 renderRegionSource();
                 renderLanguage();
+                renderAllAnnotations('geographic');
             },
             temporal: function () {
                 renderThemeTimeline();
                 renderSourceTimeline();
                 renderCumulative();
+                renderAllAnnotations('temporal');
             },
             voicegap: function () {
                 renderOrgTypes();
                 renderBinding();
                 renderCST();
+                renderCSTByRegion();
                 renderVoiceGap();
+                renderAllAnnotations('voicegap');
             }
         };
 
@@ -1201,14 +1362,30 @@
             if (renderer) {
                 renderer();
             }
-            // Resize after render
-            setTimeout(resizeVisibleCharts, 50);
+            // Add toolbox to all charts rendered in this tab
+            var tc = getThemeColors();
+            var tb = baseToolbox(tc);
+            setTimeout(function () {
+                Object.keys(charts).forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && el.offsetParent !== null) {
+                        charts[id].setOption({ toolbox: tb }, false);
+                    }
+                });
+                resizeVisibleCharts();
+            }, 50);
         }
 
         /* ====================================================================
            10. INIT
            ==================================================================== */
         populateKPIs();
+
+        // Footer timestamp
+        var tsEl = document.getElementById('footer-timestamp');
+        if (tsEl && LABOR.meta && LABOR.meta.generated) {
+            tsEl.textContent = LABOR.meta.generated.split('T')[0];
+        }
 
         // Activate tab from hash
         var initialTab = getTabFromHash();

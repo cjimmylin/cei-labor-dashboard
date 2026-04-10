@@ -640,3 +640,98 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ============================================
+   ANNOTATIONS
+   ============================================ */
+.annotations-container {
+    margin: 0.75rem 0 1.25rem;
+}
+
+.annotation-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid #6366f1;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.65rem;
+}
+
+.annotation-perspective {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+}
+
+.annotation-text {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.annotation-toggle {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.25rem 0 0;
+    font-family: var(--font-sans);
+}
+
+.annotation-toggle:hover {
+    text-decoration: underline;
+}
+
+.annotation-detail {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 0.5rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    body {
+        background: white !important;
+        color: #1e293b !important;
+    }
+
+    .tab-nav, .toggle-group, footer, .annotation-toggle {
+        display: none !important;
+    }
+
+    .tab-pane {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .chart-card {
+        break-inside: avoid;
+        border: 1px solid #e2e8f0;
+        box-shadow: none;
+    }
+
+    .annotation-card {
+        border-color: #e2e8f0;
+        background: #f8fafc;
+    }
+
+    .annotation-detail {
+        display: block !important;
+    }
+
+    .kpi-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
+}
