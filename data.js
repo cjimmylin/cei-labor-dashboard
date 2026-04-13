@@ -1,12 +1,12 @@
-// Generated 2026-04-12T07:56:56.638436 by generate_data.py
+// Generated 2026-04-12T20:56:48.217902 by generate_data.py
 const LABOR = {
   "meta": {
-    "generated": "2026-04-12T07:56:56.638112",
+    "generated": "2026-04-12T20:56:36.650627",
     "totalStatements": 3253,
     "totalPapers": 2368,
     "laborStatements": 2304,
     "laborPapers": 1117,
-    "themes": 17,
+    "themes": 18,
     "regions": 12
   },
   "summary": {
@@ -19,7 +19,7 @@ const LABOR = {
     "regionsRepresented": 12,
     "totalRegions": 12,
     "totalCountries": 218,
-    "totalThemes": 17,
+    "totalThemes": 18,
     "yearRange": [
       1998,
       2026
@@ -44,7 +44,8 @@ const LABOR = {
         "Public Sector AI & Digital Government",
         "Dignity of Work & Human Flourishing",
         "Content Moderation & Trust/Safety",
-        "Worker Surveillance & Monitoring"
+        "Worker Surveillance & Monitoring",
+        "Migration & Forced Labor"
       ],
       "values": [
         897,
@@ -58,12 +59,13 @@ const LABOR = {
         463,
         419,
         385,
-        342,
+        341,
         318,
         295,
         243,
         225,
-        117
+        117,
+        39
       ]
     },
     "topRegions": {
@@ -112,9 +114,9 @@ const LABOR = {
       "Global/International has the highest concentration of labor discourse (1479 items).",
       "The gap between statements and papers is most pronounced in \"Creative, Knowledge & Content Labor\" (703 statements vs. 150 papers).",
       "Voice gap: South Asia (discussed in 164 items vs. 54 authored); East Asia (discussed in 412 items vs. 149 authored); Europe (Central/Eastern) (discussed in 147 items vs. 63 authored) \u2014 these regions are frequently discussed in labor & AI literature but produce relatively few items themselves.",
-      "52 items reference Catholic Social Teaching documents (Laudato Si', Rerum Novarum, etc.).",
+      "70 items reference Catholic Social Teaching documents (Laudato Si', Rerum Novarum, etc.).",
       "2610 items (76.3% of total) were published from 2023 onward, reflecting post-ChatGPT acceleration.",
-      "\"Worker Surveillance & Monitoring\" is the least-covered theme with only 117 items."
+      "\"Migration & Forced Labor\" is the least-covered theme with only 39 items."
     ]
   },
   "heatmap": {
@@ -149,6 +151,7 @@ const LABOR = {
       "Disability, Accessibility & Assistive AI",
       "Just Transition & Policy Futures",
       "Public Sector AI & Digital Government",
+      "Migration & Forced Labor",
       "Cross-Cutting / Unspecified"
     ],
     "themeKeys": [
@@ -168,6 +171,7 @@ const LABOR = {
       "disability_accessibility",
       "just_transition",
       "public_sector_ai",
+      "migration_forced_labor",
       "cross_cutting"
     ],
     "matrix": [
@@ -188,6 +192,7 @@ const LABOR = {
         151,
         85,
         39,
+        10,
         64
       ],
       [
@@ -207,6 +212,7 @@ const LABOR = {
         59,
         64,
         53,
+        3,
         26
       ],
       [
@@ -226,6 +232,7 @@ const LABOR = {
         16,
         15,
         27,
+        0,
         4
       ],
       [
@@ -245,7 +252,8 @@ const LABOR = {
         54,
         20,
         38,
-        12
+        6,
+        11
       ],
       [
         25,
@@ -264,6 +272,7 @@ const LABOR = {
         24,
         9,
         18,
+        1,
         5
       ],
       [
@@ -283,6 +292,7 @@ const LABOR = {
         21,
         45,
         10,
+        2,
         16
       ],
       [
@@ -302,6 +312,7 @@ const LABOR = {
         14,
         24,
         8,
+        0,
         3
       ],
       [
@@ -321,6 +332,7 @@ const LABOR = {
         16,
         25,
         11,
+        4,
         4
       ],
       [
@@ -340,6 +352,7 @@ const LABOR = {
         14,
         30,
         16,
+        2,
         10
       ],
       [
@@ -359,6 +372,7 @@ const LABOR = {
         30,
         35,
         16,
+        2,
         1
       ],
       [
@@ -378,6 +392,7 @@ const LABOR = {
         5,
         18,
         10,
+        0,
         8
       ],
       [
@@ -397,22 +412,23 @@ const LABOR = {
         195,
         116,
         49,
+        9,
         189
       ]
     ],
     "rowTotals": [
-      1650,
-      923,
+      1660,
+      926,
       179,
-      582,
-      206,
-      342,
+      587,
+      207,
+      344,
       151,
-      239,
-      214,
-      323,
+      243,
+      216,
+      325,
       161,
-      2804
+      2813
     ],
     "colTotals": [
       897,
@@ -431,15 +447,16 @@ const LABOR = {
       599,
       486,
       295,
-      342
+      39,
+      341
     ],
     "matrixNormalized": [
       [
-        12.1,
-        7.1,
+        12.0,
+        7.0,
         1.4,
         2.5,
-        13.8,
+        13.7,
         2.8,
         6.5,
         6.0,
@@ -447,10 +464,11 @@ const LABOR = {
         5.1,
         6.3,
         5.4,
-        7.4,
-        9.2,
-        5.2,
-        2.4,
+        7.3,
+        9.1,
+        5.1,
+        2.3,
+        0.6,
         3.9
       ],
       [
@@ -458,18 +476,19 @@ const LABOR = {
         5.7,
         1.2,
         1.1,
-        10.1,
-        3.4,
+        10.0,
+        3.3,
         4.8,
         6.8,
         3.9,
         3.8,
-        15.4,
-        3.3,
+        15.3,
+        3.2,
         8.2,
         6.4,
         6.9,
         5.7,
+        0.3,
         2.8
       ],
       [
@@ -489,26 +508,28 @@ const LABOR = {
         8.9,
         8.4,
         15.1,
+        0.0,
         2.2
       ],
       [
-        10.8,
-        7.6,
+        10.7,
+        7.5,
         1.7,
         1.7,
-        15.6,
+        15.5,
         2.2,
         5.8,
-        6.4,
+        6.3,
         2.2,
         4.8,
-        7.4,
+        7.3,
         3.4,
         8.9,
-        9.3,
+        9.2,
         3.4,
         6.5,
-        2.1
+        1.0,
+        1.9
       ],
       [
         12.1,
@@ -517,35 +538,37 @@ const LABOR = {
         0.5,
         15.0,
         1.0,
-        7.8,
-        4.4,
+        7.7,
+        4.3,
         0.5,
         3.9,
         5.3,
         3.9,
-        8.3,
-        11.7,
-        4.4,
+        8.2,
+        11.6,
+        4.3,
         8.7,
+        0.5,
         2.4
       ],
       [
-        5.0,
+        4.9,
         6.1,
         2.3,
         1.2,
         14.0,
         0.3,
         2.6,
-        9.4,
+        9.3,
         7.0,
         7.0,
         6.4,
         3.8,
-        7.9,
+        7.8,
         6.1,
-        13.2,
+        13.1,
         2.9,
+        0.6,
         4.7
       ],
       [
@@ -565,63 +588,67 @@ const LABOR = {
         9.3,
         15.9,
         5.3,
+        0.0,
         2.0
       ],
       [
-        7.9,
-        9.6,
+        7.8,
+        9.5,
         2.9,
         0.0,
-        10.0,
+        9.9,
         0.4,
-        3.8,
-        13.4,
-        3.8,
-        5.4,
-        6.3,
-        7.1,
-        5.9,
-        6.7,
-        10.5,
-        4.6,
-        1.7
+        3.7,
+        13.2,
+        3.7,
+        5.3,
+        6.2,
+        7.0,
+        5.8,
+        6.6,
+        10.3,
+        4.5,
+        1.6,
+        1.6
       ],
       [
         5.6,
         5.6,
         0.5,
         1.9,
-        9.8,
+        9.7,
         0.5,
         1.9,
-        15.0,
-        3.3,
+        14.8,
+        3.2,
         6.5,
         7.9,
-        3.3,
+        3.2,
         5.6,
         6.5,
-        14.0,
-        7.5,
-        4.7
+        13.9,
+        7.4,
+        0.9,
+        4.6
       ],
       [
-        5.3,
-        5.3,
-        1.9,
+        5.2,
+        5.2,
+        1.8,
         3.4,
         4.0,
         1.2,
-        1.9,
-        13.0,
+        1.8,
+        12.9,
         3.7,
-        9.3,
+        9.2,
         10.5,
         6.8,
-        8.4,
-        9.3,
+        8.3,
+        9.2,
         10.8,
-        5.0,
+        4.9,
+        0.6,
         0.3
       ],
       [
@@ -641,14 +668,15 @@ const LABOR = {
         3.1,
         11.2,
         6.2,
+        0.0,
         5.0
       ],
       [
-        14.6,
+        14.5,
         3.0,
-        11.3,
+        11.2,
         5.0,
-        9.2,
+        9.1,
         0.5,
         2.5,
         3.8,
@@ -657,9 +685,10 @@ const LABOR = {
         6.0,
         8.4,
         6.0,
-        7.0,
+        6.9,
         4.1,
         1.7,
+        0.3,
         6.7
       ]
     ],
@@ -681,7 +710,8 @@ const LABOR = {
         25.2,
         17.5,
         13.2,
-        18.7
+        25.6,
+        18.8
       ],
       [
         10.8,
@@ -700,6 +730,7 @@ const LABOR = {
         9.8,
         13.2,
         18.0,
+        7.7,
         7.6
       ],
       [
@@ -719,6 +750,7 @@ const LABOR = {
         2.7,
         3.1,
         9.2,
+        0.0,
         1.2
       ],
       [
@@ -738,7 +770,8 @@ const LABOR = {
         9.0,
         4.1,
         12.9,
-        3.5
+        15.4,
+        3.2
       ],
       [
         2.8,
@@ -757,6 +790,7 @@ const LABOR = {
         4.0,
         1.9,
         6.1,
+        2.6,
         1.5
       ],
       [
@@ -776,6 +810,7 @@ const LABOR = {
         3.5,
         9.3,
         3.4,
+        5.1,
         4.7
       ],
       [
@@ -795,6 +830,7 @@ const LABOR = {
         2.3,
         4.9,
         2.7,
+        0.0,
         0.9
       ],
       [
@@ -814,6 +850,7 @@ const LABOR = {
         2.7,
         5.1,
         3.7,
+        10.3,
         1.2
       ],
       [
@@ -833,6 +870,7 @@ const LABOR = {
         2.3,
         6.2,
         5.4,
+        5.1,
         2.9
       ],
       [
@@ -852,6 +890,7 @@ const LABOR = {
         5.0,
         7.2,
         5.4,
+        5.1,
         0.3
       ],
       [
@@ -871,6 +910,7 @@ const LABOR = {
         0.8,
         3.7,
         3.4,
+        0.0,
         2.3
       ],
       [
@@ -890,7 +930,8 @@ const LABOR = {
         32.6,
         23.9,
         16.6,
-        55.3
+        23.1,
+        55.4
       ]
     ],
     "statementsMatrix": [
@@ -911,6 +952,7 @@ const LABOR = {
         151,
         85,
         39,
+        10,
         64
       ],
       [
@@ -930,6 +972,7 @@ const LABOR = {
         59,
         64,
         53,
+        3,
         26
       ],
       [
@@ -949,6 +992,7 @@ const LABOR = {
         16,
         15,
         27,
+        0,
         4
       ],
       [
@@ -968,7 +1012,8 @@ const LABOR = {
         54,
         20,
         38,
-        12
+        6,
+        11
       ],
       [
         25,
@@ -987,6 +1032,7 @@ const LABOR = {
         24,
         9,
         18,
+        1,
         5
       ],
       [
@@ -1006,6 +1052,7 @@ const LABOR = {
         21,
         45,
         10,
+        2,
         16
       ],
       [
@@ -1025,6 +1072,7 @@ const LABOR = {
         14,
         24,
         8,
+        0,
         3
       ],
       [
@@ -1044,6 +1092,7 @@ const LABOR = {
         16,
         25,
         11,
+        4,
         4
       ],
       [
@@ -1063,6 +1112,7 @@ const LABOR = {
         14,
         30,
         16,
+        2,
         10
       ],
       [
@@ -1082,6 +1132,7 @@ const LABOR = {
         30,
         35,
         16,
+        2,
         1
       ],
       [
@@ -1101,6 +1152,7 @@ const LABOR = {
         5,
         18,
         10,
+        0,
         8
       ],
       [
@@ -1120,6 +1172,7 @@ const LABOR = {
         77,
         109,
         44,
+        9,
         15
       ]
     ],
@@ -1141,47 +1194,11 @@ const LABOR = {
         0,
         0,
         0,
-        0
-      ],
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0
       ],
       [
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      [
         0,
         0,
         0,
@@ -1217,47 +1234,11 @@ const LABOR = {
         0,
         0,
         0,
-        0
-      ],
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0
       ],
       [
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      [
         0,
         0,
         0,
@@ -1293,6 +1274,27 @@ const LABOR = {
         0,
         0,
         0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
@@ -1312,9 +1314,71 @@ const LABOR = {
         0,
         0,
         0,
+        0,
         0
       ],
       [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
         0,
         0,
         0,
@@ -1350,6 +1414,7 @@ const LABOR = {
         118,
         7,
         5,
+        0,
         174
       ]
     ]
@@ -2197,6 +2262,37 @@ const LABOR = {
         68,
         5
       ],
+      "migration_forced_labor": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        3,
+        2,
+        7,
+        9,
+        16,
+        0
+      ],
       "cross_cutting": [
         1,
         0,
@@ -2225,7 +2321,7 @@ const LABOR = {
         16,
         40,
         100,
-        121,
+        120,
         12
       ]
     },
@@ -2586,10 +2682,10 @@ const LABOR = {
         412,
         164,
         184,
-        209,
+        201,
         179,
         156,
-        788
+        794
       ]
     },
     "cstCitations": {
@@ -2611,7 +2707,24 @@ const LABOR = {
         "Pacem in Terris",
         "Pope Francis",
         "Holy See",
-        "COMECE"
+        "COMECE",
+        "Maqasid al-Shariah",
+        "Islamic economics/ethics",
+        "Sharia-compliant",
+        "Halal economy",
+        "World Council of Churches",
+        "WCC",
+        "Ecumenical justice",
+        "Right Livelihood",
+        "Buddhist economics",
+        "Sufficiency economy",
+        "Sarvodaya",
+        "Engaged Buddhism",
+        "Tikkun Olam",
+        "Jewish social ethics",
+        "Gandhian economics",
+        "Swadeshi",
+        "Trusteeship"
       ],
       "values": [
         2,
@@ -2631,6 +2744,23 @@ const LABOR = {
         1,
         29,
         11,
+        2,
+        1,
+        3,
+        0,
+        0,
+        10,
+        9,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         2
       ]
     },
@@ -2650,32 +2780,32 @@ const LABOR = {
         "Global/International"
       ],
       "rates": [
-        1.5,
+        1.6,
         2.9,
         1.6,
         0.9,
         0.0,
-        3.4,
+        4.0,
         0.0,
-        4.9,
-        1.1,
-        1.2,
+        7.3,
+        2.2,
+        3.6,
         5.5,
-        0.9
+        1.6
       ],
       "counts": [
-        10,
+        11,
         11,
         1,
         2,
         0,
-        5,
+        6,
         0,
+        6,
+        2,
+        3,
         4,
-        1,
-        1,
-        4,
-        13
+        24
       ]
     },
     "languageBreakdown": {
@@ -2719,43 +2849,43 @@ const LABOR = {
     "summary.findings": [
       {
         "perspective": "Labor Policy",
-        "text": "The dominance of automation displacement (872 items, 25.4%) and creative/knowledge labor (805 items) as top themes reveals a discourse shaped by acute displacement anxieties rather than structural labor redesign. Session 7 introduced Public Sector AI (278 items) recognizing government workforce transformation as a distinct policy domain; Session 8 reclassified 9 cross-cutting items into creative_knowledge, public_sector_ai, and informal_supply_chains via targeted pattern additions. Meanwhile, content moderation (217 items) and surveillance (200 items) remain severely underrepresented \u2014 these exploitative practices are expanding faster than policy attention can follow."
+        "text": "The dominance of automation displacement (897 items, 26.2%) and creative/knowledge labor (853 items) as top themes reveals a discourse shaped by acute displacement anxieties rather than structural labor redesign. Public Sector AI (295 items) recognizes government workforce transformation as a distinct policy domain. Meanwhile, content moderation (225 items) and surveillance (117 items) remain severely underrepresented \u2014 these exploitative practices are expanding faster than policy attention can follow."
       },
       {
         "perspective": "CST Perspective",
-        "text": "With 52 items citing CST documents across a corpus of 3,444, the Church\u2019s century-long tradition of labor teaching remains underutilized in precisely the policy arena where its principles of worker dignity and the priority of labor over capital are most urgently needed. The expansion from 18 tracked CST sources reveals engagement concentrated around Pope Francis (29 items) and the Rome Call for AI Ethics (14 items), while foundational encyclicals like Laborem Exercens and Centesimus Annus remain largely uncited."
+        "text": "With 70 items citing CST documents across a corpus of 3,421, the Church\u2019s century-long tradition of labor teaching remains underutilized in precisely the policy arena where its principles of worker dignity and the priority of labor over capital are most urgently needed. The expansion from 18 tracked CST sources reveals engagement concentrated around Pope Francis and the Rome Call for AI Ethics, while foundational encyclicals like Laborem Exercens and Centesimus Annus remain largely uncited."
       }
     ],
     "summary.themes": [
       {
         "perspective": "Computational Linguistics",
-        "text": "The theme distribution is markedly top-heavy: the top three themes (Automation 25.4%, Creative Knowledge 23.4%, Disability/Accessibility 17.3%) account for over 66% of items. Session 7 added a 17th theme (Public Sector AI & Digital Government, 278 items) and tightened disability classification via context windowing (778\u2192595 items, removing peripheral mentions). Meanwhile surveillance monitoring dropped from 381\u2192200 after bounding legacy patterns that had been scanning entire documents. Content Moderation (217) and Surveillance (200) remain the least-covered themes."
+        "text": "The theme distribution is markedly top-heavy: the top three themes account for 69.0% of items. The taxonomy spans 18 labor themes including Public Sector AI & Digital Government (295 items) and Disability/Accessibility (599 items). Content Moderation (225) and Surveillance (117) remain the least-covered themes."
       },
       {
         "perspective": "Labor Policy",
-        "text": "The persistent statement-paper gap in Skill Transformation (492 statements vs. 8 papers) exposes a dangerous pattern: policymakers are issuing guidance on workforce reskilling with almost no empirical research base, suggesting that skill transformation rhetoric may function as politically convenient deflection."
+        "text": "The persistent statement-paper gap in Skill Transformation (505 statements vs. 8 papers) exposes a dangerous pattern: policymakers are issuing guidance on workforce reskilling with almost no empirical research base, suggesting that skill transformation rhetoric may function as politically convenient deflection."
       }
     ],
     "summary.acceleration": [
       {
         "perspective": "Regional Studies",
-        "text": "The 76.2% post-ChatGPT concentration reveals a reactive, event-driven discourse pattern rather than sustained institutional capacity for AI-labor governance. This temporal clustering raises serious concerns about the Global South\u2019s ability to participate meaningfully: regions with weaker research infrastructure are being asked to respond to a discourse whose terms were set within months by North American and European actors."
+        "text": "The 76.3% post-ChatGPT concentration reveals a reactive, event-driven discourse pattern rather than sustained institutional capacity for AI-labor governance. Note: The Tapestry database\u2019s 12+ ingestion waves systematically targeted 2023\u20132026 documents; this figure reflects collection strategy alongside genuine discourse growth. This temporal clustering raises serious concerns about the Global South\u2019s ability to participate meaningfully: regions with weaker research infrastructure are being asked to respond to a discourse whose terms were set within months by North American and European actors."
       }
     ],
     "heatmap.main": [
       {
         "perspective": "Labor Policy",
-        "text": "The intense hotspots at the intersection of Global/International bodies with collective bargaining and automation reveal that supranational organizations are setting the normative framework while regional and national actors follow rather than lead. Despite new MENA and Southeast Asian entries from Session 6 discovery, the persistent thinness in South Asia (52 authored items vs. 163 discussed) and Sub-Saharan Africa (83 authored vs. 168 discussed) remains alarming given these regions contain the largest concentrations of workers most exposed to AI-driven labor displacement."
+        "text": "The intense hotspots at the intersection of Global/International bodies with collective bargaining and automation reveal that supranational organizations are setting the normative framework while regional and national actors follow rather than lead. The persistent thinness in South Asia (54 authored items vs. 164 discussed) and Sub-Saharan Africa (83 authored vs. 179 discussed) remains alarming given these regions contain the largest concentrations of workers most exposed to AI-driven labor displacement."
       },
       {
         "perspective": "Regional Studies",
-        "text": "The pattern of Global North regions generating discourse about Global South labor conditions \u2014 without corresponding Southern voice \u2014 reproduces a familiar colonial knowledge asymmetry. The heatmap\u2019s empty cells represent systematically silenced perspectives from communities whose labor practices and social protection needs diverge most sharply from dominant frameworks."
+        "text": "The pattern of Global North regions generating discourse about Global South labor conditions \u2014 without corresponding Southern voice \u2014 reproduces a familiar colonial knowledge asymmetry. The heatmap\u2019s lower-density cells represent systematically underrepresented perspectives from communities whose labor practices and social protection needs diverge most sharply from dominant frameworks."
       }
     ],
     "heatmap.gaps": [
       {
         "perspective": "CST Perspective",
-        "text": "The empty cells where Just Transition intersects with the Global South represent a profound failure of solidarity \u2014 the principle that the costs of economic transformation must not fall disproportionately on those least responsible and least equipped. The universal destination of goods demands that AI\u2019s benefits be directed toward, not extracted from, these regions."
+        "text": "The lower-density cells where Just Transition intersects with the Global South represent a profound failure of solidarity \u2014 the principle that the costs of economic transformation must not fall disproportionately on those least responsible and least equipped. The universal destination of goods demands that AI\u2019s benefits be directed toward, not extracted from, these regions."
       }
     ],
     "geographic.concentration": [
@@ -2789,7 +2919,7 @@ const LABOR = {
     "voicegap.authored": [
       {
         "perspective": "Regional Studies",
-        "text": "The 3.1x ratio for South Asia \u2014 discussed more than three times as often as it authors \u2014 quantifies epistemic extraction where Global South labor conditions serve as case studies for Global North theorists. East Asia (2.8x), Middle East & North Africa (2.4x), and Southeast Asia (2.2x) follow a similar pattern. This is structural: conference locations, journal gatekeeping, funding flows, and language barriers systematically convert Southern experience into Northern intellectual capital."
+        "text": "The 3.0x ratio for South Asia \u2014 discussed more than three times as often as it authors \u2014 quantifies asymmetric attention where Global South labor conditions serve as case studies for Global North theorists. East Asia (2.8x), Middle East & North Africa (2.2x), and Southeast Asia (2.2x) follow a similar pattern. This is structural: conference locations, journal gatekeeping, funding flows, and language barriers systematically convert Southern experience into Northern intellectual capital."
       },
       {
         "perspective": "CST Perspective",
@@ -2804,9 +2934,26 @@ const LABOR = {
     ],
     "voicegap.cst": [
       {
-        "perspective": "CST Scholar",
-        "text": "CST-citing items cluster around Pope Francis (29 items), Rome Call for AI Ethics (14), and general \u2018Catholic Social Teaching\u2019 references (12), while foundational labor encyclicals \u2014 Laborem Exercens, Centesimus Annus, Caritas in Veritate \u2014 remain nearly uncited. Engagement is personality-driven rather than doctrinally grounded, drawn to papal media presence rather than the systematic social teaching tradition. The regional pattern of CST engagement likely mirrors the Church\u2019s institutional strength rather than the regions where solidarity principles are most operationally needed."
+        "perspective": "CST Perspective",
+        "text": "Of 70 religious-ethics-citing items, Catholic engagement clusters around Pope Francis, Rome Call for AI Ethics, and general \u2018Catholic Social Teaching\u2019 references, while foundational labor encyclicals \u2014 Laborem Exercens, Centesimus Annus, Caritas in Veritate \u2014 remain nearly uncited. Engagement is personality-driven rather than doctrinally grounded, drawn to papal media presence rather than the systematic social teaching tradition."
+      },
+      {
+        "perspective": "Ecumenical Perspective",
+        "text": "The World Council of Churches and ecumenical bodies represent a distinct voice in AI-labor ethics, emphasizing economic justice and dignified work from a multi-faith perspective. The \u2018Transform AI\u2019 communique and related WCC statements bridge religious traditions, offering frameworks that complement but differ from Catholic Social Teaching\u2019s hierarchical magisterial authority."
       }
-    ]
+    ],
+    "methodology": {
+      "surveillancePrecision": "Estimated precision 100% (31/31 in R3 audit subset), Wilson 95% CI [89.0%, 100%]. Full-population precision (117 items) pending exhaustive audit.",
+      "surveillanceExclusions": [
+        "STMT-0496",
+        "STMT-1551",
+        "STMT-2040"
+      ],
+      "classificationLanguage": "English-only regex (17 theme patterns)",
+      "extractCap": 10000,
+      "regionDefault": "Global/International (items without parseable geographic metadata)",
+      "cstTrackerScope": "Originally Catholic-only (18 source patterns). 70 items cite CST documents.",
+      "collectionBias": "12+ ingestion waves targeting 2023\u20132026 documents. 76.3% post-2023 concentration reflects collection strategy alongside discourse growth."
+    }
   }
 };

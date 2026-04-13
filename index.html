@@ -16,6 +16,7 @@
 
     <!-- Bootstrap 5.3.3 (CSS only) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
 
     <!-- Dashboard Styles -->
@@ -233,15 +234,30 @@
 
     </main>
 
+    <!-- Methodology & Limitations Disclosure -->
+    <details class="methodology-disclosure" style="max-width:1200px; margin:2rem auto; padding:0 1rem;">
+        <summary style="cursor:pointer; color:var(--text-secondary); font-size:0.85rem; padding:0.75rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-card);">
+            Methodology &amp; Limitations
+        </summary>
+        <div style="padding:1rem; border:1px solid var(--border); border-top:none; border-radius:0 0 var(--radius) var(--radius); background:var(--bg-card); color:var(--text-secondary); font-size:0.8rem; line-height:1.6;" id="methodology-panel">
+            <p><strong>Classification Pipeline:</strong> All 17 labor themes are classified using English-language keyword regex patterns. Non-English documents are systematically disadvantaged, contributing to higher cross-cutting rates in regions with lower English proficiency.</p>
+            <p><strong>Text Extraction:</strong> Document extracts are capped at 10,000 characters (EXTRACT_CAP), creating position-dependent classification bias for longer documents.</p>
+            <p><strong>Region Assignment:</strong> Items without geographic metadata are assigned to "Global/International" by default via <code>normalize_region()</code>, inflating that category.</p>
+            <p><strong>Surveillance Exclusions:</strong> Three items (STMT-0496, STMT-1551, STMT-2040) are excluded from surveillance classification by hard-coded rules to correct known false positives.</p>
+            <p><strong>Religious Ethics Tracker:</strong> Originally developed to measure Catholic Social Teaching (CST) citations. Expanded in v12 to include Islamic, Protestant/Ecumenical, Buddhist, Jewish, and Gandhian/Indian ethical economics sources. Detection rates reflect both corpus composition and keyword specificity; absence of matches does not indicate absence of discourse in a tradition.</p>
+            <p><strong>Collection Bias:</strong> The Tapestry database conducted 12+ targeted ingestion waves that systematically prioritized 2023&ndash;2026 documents. Temporal concentration figures reflect collection strategy alongside genuine discourse growth.</p>
+        </div>
+    </details>
+
     <!-- Provenance Footer -->
     <footer style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.75rem; border-top:1px solid var(--border); line-height:1.8;">
-        CEI Literature Vault &mdash; AI &amp; Labor Dashboard v11<br>
+        CEI Literature Vault &mdash; AI &amp; Labor Dashboard v12<br>
         Data: Tapestry (3,253 statements) + CEI-Lit-WS (2,368 papers) &mdash; keyword classification with 17 labor themes<br>
         Generated <span id="footer-timestamp"></span> &mdash; Centre for Ethics and Integrity
     </footer>
 
     <!-- ECharts 5.5.0 -->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js" integrity="sha384-o5uz97et3bErHvpKfD4Jz4n0JfhJDWABFuF4NP+iEEDxE1VwMWJ19QGR0lqFZnr6" crossorigin="anonymous"></script>
 
     <!-- Data (pre-computed by Python generator) -->
     <script src="data.js"></script>
